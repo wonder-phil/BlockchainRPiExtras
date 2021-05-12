@@ -1,0 +1,22 @@
+#
+# From https://pycryptodome.readthedocs.io/en/latest/src/examples.html
+#
+import crypto
+import sys
+sys.modules['Crypto'] = crypto
+
+from Crypto.PublicKey import RSA
+from Crypto.Cipher import PKCS1_OAEP
+
+data = "The world AI_IoT Conference is excellent!".encode("utf-8")
+file_out = open("encrypted_data.bin", "wb")
+
+recipient_key = RSA.importKey(open("receiver.pem").read())
+
+# Encrypt the session key with the public RSA key
+cipher_rsa = PKCS1_OAEP.new(recipient_key)
+enc_session_key = cipher_rsa.encrypt(data)
+
+# Encrypt the data with RSA
+file_out.write(enc_session_key)
+file_out.close()
