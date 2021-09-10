@@ -13,7 +13,7 @@ from Crypto.Cipher import PKCS1_OAEP
 data = "The class is excellent and the students are brilliant!".encode("utf-8")
 file_out = open("encrypted_data.bin", "wb")
 
-recipient_key = RSA.importKey(open("receiver.pem").read())
+recipient_key = RSA.importKey(open("public.pem").read())
 
 # Encrypt the session key with the public RSA key
 cipher_rsa = PKCS1_OAEP.new(recipient_key)
