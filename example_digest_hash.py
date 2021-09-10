@@ -10,4 +10,12 @@ class ExampleHash:
         myBytes = data.encode()
         self.hashFunction.update(myBytes)
         print(self.hashFunction.hexdigest())
+
+
+e = ExampleHash();
+
+e.compHash("Hello");
+e.compHash("Hello1");
+e.compHash("Hello2");
+e.compHash("Hello2453453453453345353453454564564");
     

@@ -1,6 +1,8 @@
 #
 # From https://pycryptodome.readthedocs.io/en/latest/src/examples.html
 #
+# First run: python3 key_gen.py
+#
 import crypto
 import sys
 sys.modules['Crypto'] = crypto
@@ -8,7 +10,7 @@ sys.modules['Crypto'] = crypto
 from Crypto.PublicKey import RSA
 from Crypto.Cipher import PKCS1_OAEP
 
-data = "The world AI_IoT Conference is excellent!".encode("utf-8")
+data = "The class is excellent and the students are brilliant!".encode("utf-8")
 file_out = open("encrypted_data.bin", "wb")
 
 recipient_key = RSA.importKey(open("receiver.pem").read())
