@@ -1,7 +1,7 @@
 #
 # From https://pycryptodome.readthedocs.io/en/latest/src/examples.html
 #
-# pip3 install crypto
+# 
 # pip3 install pycryptodome
 #
 # First Run python3 key_gen.py   
