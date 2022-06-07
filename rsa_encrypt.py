@@ -10,7 +10,7 @@ sys.modules['Crypto'] = crypto
 from Crypto.PublicKey import RSA
 from Crypto.Cipher import PKCS1_OAEP
 
-data = "Welcome to the IEEE CCWC IoT Workshop".encode("utf-8")
+data = "Welcome to the IEEE AI IoT Congress!".encode("utf-8")
 file_out = open("encrypted_data.bin", "wb")
 
 recipient_key = RSA.importKey(open("public.pem").read())
